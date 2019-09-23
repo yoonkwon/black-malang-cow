@@ -19,7 +19,10 @@ default: &default
 
 development:
   <<: *default
+  host: localhost
+  port: 3306
   database: black-malang-cow_development
+  username: root
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -49,6 +52,8 @@ test:
 #
 production:
   <<: *default
+  host: localhost
+  port: 3306
   database: black-malang-cow_production
   username: black-malang-cow
   password: <%= ENV['BLACK-MALANG-COW_DATABASE_PASSWORD'] %>
