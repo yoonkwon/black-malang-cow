@@ -4,7 +4,7 @@ class HomeController < ApplicationController
     if user_signed_in?
       render json: {result: current_user}
     else
-      render json: {result: nil}
+      redirect_to user_signin_path
     end
   end
 end
