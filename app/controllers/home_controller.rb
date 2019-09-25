@@ -1,6 +1,10 @@
 class HomeController < ApplicationController
 
   def index
-    render json: {result: 'home'}
+    if user_signed_in?
+      render json: {result: current_user}
+    else
+      render json: {result: nil}
+    end
   end
 end
